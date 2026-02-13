@@ -36,4 +36,9 @@ The dataset consists of signal processing metrics derived from ECG recordings.
     ```
 
 ## 📈 Visualizations
-(See the uploaded PNG files for the Confusion Matrix and Feature Importance plots)
+
+### Confusion Matrix
+![Confusion Matrix](confusion_matrix.png)
+
+### Feature Importance
+![Feature Importance](feature_importance.png)
