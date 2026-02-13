@@ -42,3 +42,8 @@ The dataset consists of signal processing metrics derived from ECG recordings.
 
 ### Feature Importance
 ![Feature Importance](feature_importance.png)
+
+### 🧬 Biological Validation
+This boxplot confirms the physiological basis of the model: **Stress (Time Pressure)** is significantly correlated with lower **Median RR Intervals** (faster, more regular heartbeats).
+
+![Biological Proof](biological_proof.png)
