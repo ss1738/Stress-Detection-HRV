@@ -1,22 +1,16 @@
 import joblib
 import pandas as pd
 
-# 1. Load the model
+# Load the model
 model = joblib.load('stress_model_rf.pkl')
 
-# 2. Get the feature names the model was trained on
-# This ensures we have the correct columns
+# Create a sample data point (ensure all 34 features are present)
 features = model.feature_names_in_
+sample_data = pd.DataFrame([[0.0] * len(features)], columns=features)
 
-# 3. Create a dummy data point with the correct number of columns (34)
-# We fill it with zeros and then set the most important ones
-sample_values = [0] * len(features)
-data = pd.DataFrame([sample_values], columns=features)
+# Set specific values for important features
+sample_data['MEDIAN_RR'] = 630.5
+sample_data['HR'] = 75.0
 
-# Set some realistic values for the top features
-data['MEDIAN_RR'] = 630.5
-data['HR'] = 75.0
-
-# 4. Get prediction
-prediction = model.predict(data)
+prediction = model.predict(sample_data)
 print(f"Predicted Stress Condition: {prediction[0]}")
